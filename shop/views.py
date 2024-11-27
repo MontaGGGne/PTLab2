@@ -13,7 +13,7 @@ def index(request):
 
 class PurchaseCreate(CreateView):
     model = Purchase
-    fields = ['product', 'person', 'address']
+    fields = ['product', 'product_quantity', 'person', 'address']
 
     def form_valid(self, form):
         self.object = form.save()
