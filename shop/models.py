@@ -4,11 +4,11 @@ from django.db import models
 class Product(models.Model):
     name = models.CharField(max_length=200)
     price = models.PositiveIntegerField()
-    quantity = models.PositiveIntegerField(max_length=50)
+    quantity = models.PositiveIntegerField(default=100)
 
 class Purchase(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    product_quantity = models.PositiveIntegerField(max_length=10)
+    product_quantity = models.PositiveIntegerField(default=1)
     person = models.CharField(max_length=200)
     address = models.CharField(max_length=200)
     date = models.DateTimeField(auto_now_add=True)
